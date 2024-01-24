@@ -1,0 +1,29 @@
+plugins {
+    id 'com.android.application'
+}
+
+android {
+    namespace 'com.saradabar.bypassrevokepermission'
+    compileSdk 34
+
+    defaultConfig {
+        applicationId "com.saradabar.bypassrevokepermission"
+        minSdk 22
+        //noinspection ExpiredTargetSdkVersion
+        targetSdk 22
+        versionCode 1
+        versionName "1.0"
+    }
+
+    buildTypes {
+        release {
+            minifyEnabled true
+            shrinkResources true
+            proguardFiles getDefaultProguardFile('proguard-android-optimize.txt'), 'proguard-rules.pro'
+        }
+    }
+}
+
+dependencies {
+    implementation fileTree(dir: "libs", include: ["*.jar"])
+}
