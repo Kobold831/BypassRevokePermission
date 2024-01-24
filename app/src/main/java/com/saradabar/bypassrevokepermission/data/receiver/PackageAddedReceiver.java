@@ -12,7 +12,7 @@ public class PackageAddedReceiver extends BroadcastReceiver {
 
     @Override
     public void onReceive(Context context, Intent intent) {
-        if (!Objects.requireNonNull(intent.getData()).toString().replace("package:", "").equals("com.saradabar.empty")) {
+        if (!Objects.requireNonNull(intent.getData()).toString().replace("package:", "").equals("a.a")) {
             switch (Objects.requireNonNull(intent.getAction())) {
                 case Intent.ACTION_PACKAGE_ADDED:
                 case Intent.ACTION_PACKAGE_REMOVED:
