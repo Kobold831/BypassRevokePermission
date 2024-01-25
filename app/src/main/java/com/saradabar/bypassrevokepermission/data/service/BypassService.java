@@ -19,6 +19,7 @@ import jp.co.benesse.dcha.dchaservice.IDchaService;
 public class BypassService extends Service {
 
     IDchaService mDchaService;
+    final int DelayMillis = 800;
 
     @Override
     public IBinder onBind(Intent intent) {
@@ -41,7 +42,7 @@ public class BypassService extends Service {
         Runnable runnable = () -> {
             BenesseExtension.setDchaState(3);
         };
-        new Handler().postDelayed(runnable, 1000);
+        new Handler().postDelayed(runnable, DelayMillis);
 
         copyAssetsFile();
 
@@ -53,12 +54,12 @@ public class BypassService extends Service {
             } catch (Exception ignored) {
             }
         };
-        new Handler().postDelayed(runnable2, 1000);
+        new Handler().postDelayed(runnable2, DelayMillis);
 
         Runnable runnable3 = () -> {
             BenesseExtension.setDchaState(0);
         };
-        new Handler().postDelayed(runnable3, 1000);
+        new Handler().postDelayed(runnable3, DelayMillis);
         stopSelf();
         return START_NOT_STICKY;
     }
