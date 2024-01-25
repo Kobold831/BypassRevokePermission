@@ -8,10 +8,10 @@
 
     <application
         android:label="BypassRevokePermission"
-        android:theme="@android:style/Theme.Light.NoTitleBar"
         tools:ignore="MissingApplicationIcon">
 
-        <activity android:name=".MainActivity"
+        <activity
+            android:name=".MainActivity"
             android:exported="true">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
@@ -48,5 +48,6 @@
                 <data android:scheme="package" />
             </intent-filter>
         </receiver>
+
     </application>
 </manifest>

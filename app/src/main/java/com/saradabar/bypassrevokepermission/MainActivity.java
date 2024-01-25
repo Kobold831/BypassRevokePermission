@@ -1,8 +1,11 @@
 package com.saradabar.bypassrevokepermission;
 
+import static android.content.pm.PackageManager.*;
+
 import android.app.Activity;
-import android.app.AlertDialog;
+import android.content.ComponentName;
 import android.os.Bundle;
+import android.widget.Toast;
 
 public class MainActivity extends Activity {
 
@@ -10,10 +13,8 @@ public class MainActivity extends Activity {
     public void onCreate(Bundle bundle) {
         super.onCreate(bundle);
 
-        new AlertDialog.Builder(this)
-                .setCancelable(false)
-                .setMessage("機能は有効になりました")
-                .setPositiveButton("OK", (dialog, which) -> finish())
-                .show();
+        Toast.makeText(getApplicationContext(), "機能は有効になりました", Toast.LENGTH_LONG).show();
+        getPackageManager().setComponentEnabledSetting(new ComponentName(this, getClass()), COMPONENT_ENABLED_STATE_DISABLED, DONT_KILL_APP);
+        finishAndRemoveTask();
     }
 }
