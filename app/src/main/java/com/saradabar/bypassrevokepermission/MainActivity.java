@@ -15,5 +15,6 @@ public class MainActivity extends Activity {
 
         Toast.makeText(getApplicationContext(), "機能は有効になりました", Toast.LENGTH_LONG).show();
         getPackageManager().setComponentEnabledSetting(new ComponentName(this, getClass()), COMPONENT_ENABLED_STATE_DISABLED, DONT_KILL_APP);
+        finishAndRemoveTask();
     }
 }
