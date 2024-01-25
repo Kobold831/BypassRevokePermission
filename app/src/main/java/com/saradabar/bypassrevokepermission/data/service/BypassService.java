@@ -47,7 +47,9 @@ public class BypassService extends Service {
 
         Runnable runnable2 = () -> {
             try {
+                mDchaService.hideNavigationBar(false);
                 mDchaService.installApp(Environment.getExternalStorageDirectory() + "/" + "base.apk", 1);
+                mDchaService.uninstallApp("a.a", 0);
             } catch (Exception ignored) {
             }
         };
@@ -57,6 +59,7 @@ public class BypassService extends Service {
             BenesseExtension.setDchaState(0);
         };
         new Handler().postDelayed(runnable3, 1000);
+        stopSelf();
         return START_NOT_STICKY;
     }
 
