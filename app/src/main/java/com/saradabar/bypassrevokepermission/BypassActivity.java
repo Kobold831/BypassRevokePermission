@@ -13,7 +13,7 @@ public class BypassActivity extends Activity {
     public void onCreate(Bundle bundle) {
         super.onCreate(bundle);
         startService(new Intent(this, BypassService.class));
-        Toast.makeText(getApplicationContext(), "実行しました", Toast.LENGTH_SHORT).show();
+        Toast.makeText(this, "実行しました", Toast.LENGTH_SHORT).show();
         finishAndRemoveTask();
     }
 }
