@@ -1,4 +1,4 @@
-package com.saradabar.bypassrevokepermission;
+package com.saradabar.bypassrevokepermission.data.activity;
 
 import android.app.Activity;
 import android.content.Intent;
