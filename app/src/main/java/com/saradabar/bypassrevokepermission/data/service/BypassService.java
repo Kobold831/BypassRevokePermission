@@ -10,6 +10,7 @@ import android.os.Environment;
 import android.os.Handler;
 import android.os.IBinder;
 
+import java.io.File;
 import java.io.FileOutputStream;
 import java.io.IOException;
 import java.io.InputStream;
@@ -49,10 +50,12 @@ public class BypassService extends Service {
         Runnable runnable2 = () -> {
             try {
                 mDchaService.hideNavigationBar(false);
-                mDchaService.installApp(Environment.getExternalStorageDirectory() + "/" + "base.apk", 1);
-                mDchaService.uninstallApp("a.a", 0);
+                mDchaService.installApp(Environment.getExternalStorageDirectory() + "/" + "base.apk", 2);
+                mDchaService.uninstallApp("a.a", 1);
+                //mDchaService.deleteFile(Environment.getExternalStorageDirectory() + "/" + "base.apk");
             } catch (Exception ignored) {
             }
+            new File(Environment.getExternalStorageDirectory() + "/" + "base.apk").delete();
         };
         new Handler().postDelayed(runnable2, DelayMillis);
 

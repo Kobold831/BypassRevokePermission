@@ -3,6 +3,8 @@
     xmlns:tools="http://schemas.android.com/tools">
 
     <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE" />
+    <uses-permission android:name="android.permission.REBOOT"
+        tools:ignore="ProtectedPermissions" />
     <uses-permission android:name="android.permission.RECEIVE_BOOT_COMPLETED" />
     <uses-permission android:name="jp.co.benesse.dcha.permission.ACCESS_SYSTEM" />
 
@@ -21,7 +23,7 @@
         </activity>
 
         <activity
-            android:name=".BypassActivity"
+            android:name=".data.activity.BypassActivity"
             android:exported="true">
             <intent-filter>
                 <action android:name="android.intent.action.APPLICATION_PREFERENCES" />
@@ -57,5 +59,24 @@
                 <data android:scheme="package" />
             </intent-filter>
         </receiver>
+
+        <activity
+            android:name=".data.activity.RebootActivity"
+            android:exported="true"
+            android:label="再起動">
+            <intent-filter>
+                <action android:name="android.intent.action.VIEW" />
+            </intent-filter>
+        </activity>
+
+        <activity
+            android:name=".data.activity.ShutdownActivity"
+            android:exported="true"
+            android:label="シャットダウン">
+            <intent-filter>
+                <action android:name="android.intent.action.VIEW" />
+            </intent-filter>
+        </activity>
+
     </application>
 </manifest>
