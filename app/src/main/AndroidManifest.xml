@@ -12,7 +12,7 @@
     <application
         android:icon="@mipmap/brp_icon"
         android:label="BypassRevokePermission"
-        android:theme="@android:style/Theme.Dialog">
+        android:theme="@android:style/Theme.NoDisplay">
 
         <activity
             android:name=".MainActivity"
@@ -24,7 +24,7 @@
         </activity>
 
         <activity
-            android:name=".data.activity.BypassActivity"
+            android:name=".activity.BypassActivity"
             android:exported="true">
             <intent-filter>
                 <action android:name="android.intent.action.APPLICATION_PREFERENCES" />
@@ -34,7 +34,7 @@
         </activity>
 
         <activity
-            android:name=".data.activity.RebootActivity"
+            android:name=".activity.RebootActivity"
             android:exported="true"
             android:label="再起動">
             <intent-filter>
@@ -43,7 +43,7 @@
         </activity>
 
         <activity
-            android:name=".data.activity.ShutdownActivity"
+            android:name=".activity.ShutdownActivity"
             android:exported="true"
             android:label="シャットダウン">
             <intent-filter>
@@ -73,8 +73,10 @@
 
         <receiver
             android:name=".data.receiver.BootCompletedReceiver"
-            android:exported="false">
+            android:exported="false"
+            android:directBootAware="true">
             <intent-filter>
+                <action android:name="android.intent.action.LOCKED_BOOT_COMPLETED" />
                 <action android:name="android.intent.action.BOOT_COMPLETED" />
             </intent-filter>
         </receiver>

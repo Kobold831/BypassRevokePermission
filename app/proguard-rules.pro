@@ -1,2 +1,3 @@
--ignorewarnings
+-keep class android.os.IBenesseExtensionService
+-keep class android.os.BenesseExtension
 -keep class jp.co.benesse.dcha.dchaservice.IDchaService
