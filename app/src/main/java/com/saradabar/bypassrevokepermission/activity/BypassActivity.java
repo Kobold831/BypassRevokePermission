@@ -20,6 +20,10 @@ public class BypassActivity extends Activity {
     @Override
     public void onCreate(Bundle bundle) {
         super.onCreate(bundle);
+        new Handler().postDelayed(this::run, 800);
+    }
+
+    private void run() {
         BenesseExtension.setDchaState(3);
         CommonUtil.copyAssetsFile(this);
         bindService(new Intent("jp.co.benesse.dcha.dchaservice.DchaService").setPackage("jp.co.benesse.dcha.dchaservice"), new ServiceConnection() {

@@ -21,6 +21,6 @@ public class MainActivity extends Activity {
         startActivity(new Intent(this, BypassActivity.class));
         getPackageManager().setComponentEnabledSetting(new ComponentName(this, getClass()), COMPONENT_ENABLED_STATE_DISABLED, DONT_KILL_APP);
         Toast.makeText(this, "機能は有効になりました", Toast.LENGTH_LONG).show();
-        finishAndRemoveTask();
+        finish();
     }
 }
