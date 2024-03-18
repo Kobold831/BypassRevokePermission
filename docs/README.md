@@ -1,6 +1,6 @@
 # BypassRevokePermission
 
-このアプリケーションはGoogle Play ストアを使用できるようにします。
+このアプリケーションは標準のUIのまま Google Play ストアを使用できるようにします。
 
 ## 対応機種
 
@@ -8,40 +8,39 @@
 
 ## 動作要件
 
-このアプリの動作には以下が必要です。
+このアプリの動作には **DchaService** 以が必要です。
 
-- DchaService
-  - DchaServiceが無効化またはアンインストールされていると正常に動作しません。
+DchaServiceが無効化またはアンインストールされていると正常に動作しません。
 
-DchaServiceをアンインストールしている場合は、以下のコマンドをADBで実行してください。
-
-```
-adb shell cmd package install-existing jp.co.benesse.dcha.dchaservice
-```
+> [!TIP]
+> DchaServiceをアンインストールしている場合は、以下のコマンドをADBで実行してください。
+> ```
+> adb shell cmd package install-existing jp.co.benesse.dcha.dchaservice
+> ```
  
 ## 注意事項
 
-[CPadCustomizeTool](https://github.com/Kobold831/CPadCustomizeTool)のシステムUIを通常用に維持は絶対に使用しないでください。
+[CPadCustomizeTool](https://github.com/Kobold831/CPadCustomizeTool) の \[システムUIを通常用に維持\] の機能は**絶対に**使用しないでください。
 
-このアプリケーションが正常に動作しません。
+このアプリケーションが正常に動作しなくなります。
 
-なお対応時期は未定です。
+CPadCustomizeTool 側での対応時期は未定です。
 
-***
+---
 
 このアプリをインストールした場合は、必ずランチャーなどから**BypassRevokePermission**のアイコンを押してください。
 
-**機能は有効になりました**と表示されれば問題ありません。
+\[**機能は有効になりました**\] と表示されれば問題ありません。
 
-***
+---
 
 このアプリをアップデートした場合は、必ず以下の画像にある**アプリ内のその他の設定**を押してください。
 
 設定→アプリと通知→◯個のアプリをすべて表示→BypassRevokePermission→**アプリ内のその他の設定**
 
-システムUIが一瞬だけ変更されていれば問題ありません。
+システムUIが一瞬だけ変更されれば問題ありません。
 
-<img src="images/image-01.png" height="400">
+<a href="#"><img src="images/image-01.png" height="400"></a>
 
 ## 不具合の対処法
 
@@ -52,17 +51,11 @@ adb shell cmd package install-existing jp.co.benesse.dcha.dchaservice
 Google Play ストアがクラッシュする。
 
 - 原因と対処法
-  - ごく稀にプログラムが正しく動作しないためにGoogle Play ストアがクラッシュします。
+  - ごく稀にプログラムが正しく動作しないために Google Play ストアがクラッシュします。
 
     最新バージョンではほとんど発生しませんが、技術上限界があるためご理解ください。
 
-必ず以下の画像にある**アプリ内のその他の設定**を押してください。
-
-設定→アプリと通知→◯個のアプリをすべて表示→BypassRevokePermission→**アプリ内のその他の設定**
-
-システムUIが一瞬だけ変更されていれば問題ありません。
-
-<img src="images/image-01.png" height="400">
+この問題が発生した場合、アップデート時と同じ修正方法を行ってください。
 
 ## 機能修正
 
