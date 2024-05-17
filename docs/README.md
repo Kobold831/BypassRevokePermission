@@ -1,3 +1,7 @@
+**このアプリケーションのサポートは終了しました。チャレンジパッドNextのブートローダがアンロックできるためです。**
+
+**[こちら](https://github.com/SmileTabLabo/CVE-2022-38181)をご参照ください。**
+
 # BypassRevokePermission
 
 このアプリケーションは標準のUIのまま Google Play ストアを使用できるようにします。
